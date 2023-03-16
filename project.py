@@ -53,3 +53,29 @@ def conf():
     else:
         print("Invalid input.")
         conf()
+
+    def main():
+    global drinks
+    global price
+    global order_index
+    global o
+    global x
+    print("SOFT DRINK VENDING MACHINE")
+    drinks = ["Coca Cola", "Fanta", "Mirinda", "Thumbs Up", "RedBull", "Sting", "Blue", "Sprite"]
+    price = [35, 30, 50, 40, 100, 20, 65, 55]
+    for i in range(0,len(drinks)):
+        print(f"ID:{i}) {drinks[i]}:{price[i]}")
+    while True:
+        x = int(input("Enter The Number Of Drinks You Want: "))
+        if x > 0:
+            break
+        else:
+            print("Invalid number")
+    order_index = []
+    o = 1
+    order()
+    receipt()
+    conf()
+
+
+main()
